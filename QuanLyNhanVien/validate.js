@@ -3,6 +3,20 @@ function display(data){
   
 }
 function isUsernameUnique(username) {
+  for (var i = 0; i < listStaff.length; i++) {
+    if (listStaff[i].username === username) {
+      return false; // Tên người dùng đã tồn tại
+    }
+  }
+  return true; // Tên người dùng không bị trùng
+}
+
+
+  
+
+
+
+function isUsernameUnique(username) {
   return listStaff.every(function (employee) {
     return employee.username !== username;
   });

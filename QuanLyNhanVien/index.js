@@ -179,86 +179,79 @@ function btnCapNhat() {
     return item.username == username;
   });
   
-    // validate
-    var isValid = true;
+// validate
+var isValid = true;
 
-    if (!isUsernameUnique(username)) {
-      document.getElementById("tbTKNV").innerHTML = "Tài khoản không được trùng nhau";
-      isValid = false;
-      document.getElementById("tbTKNV").style.display = "block";
-    } else {
-      document.getElementById("tbTKNV").style.display = "none";
-    }
-    if (!validateUsername(username)) {
-      document.getElementById("tbTKNV").innerHTML = "Tài khoản phải có 4-6 ký tự";
-      isValid = false;
-      document.getElementById("tbTKNV").style.display = "block";
-    } else {
-      document.getElementById("tbTKNV").style.display = "none";
-    }
-  
-    if (!validateFullName(fullname)) {
-      document.getElementById("tbTen").innerHTML = "Tên nhân viên phải là chữ";
-      isValid = false;
-      document.getElementById("tbTen").style.display = "block";
-    } else {
-      document.getElementById("tbTen").style.display = "none";
-    }
-  
-    if (!validateEmail(email)) {
-      document.getElementById("tbEmail").innerHTML = "Email không đúng định dạng";
-      isValid = false;
-      document.getElementById("tbEmail").style.display = "block";
-    } else {
-      document.getElementById("tbEmail").style.display = "none";
-    }
-  
-    if (!validatePassword(password)) {
-      document.getElementById("tbMatKhau").innerHTML =
-        "Mật khẩu phải từ 6-10 ký tự, bao gồm ít nhất 1 số, 1 chữ in hoa, và 1 ký tự đặc biệt";
-      isValid = false;
-      document.getElementById("tbMatKhau").style.display = "block";
-    } else {
-      document.getElementById("tbMatKhau").style.display = "none";
-    }
-  
-    if (!validateDate(days)) {
-      document.getElementById("tbNgay").innerHTML =
-        "Ngày làm không đúng định dạng (mm/dd/yyyy)";
-      isValid = false;
-      document.getElementById("tbNgay").style.display = "block";
-    } else {
-      document.getElementById("tbNgay").style.display = "none";
-    }
-  
-    if (!validateSalary(money)) {
-      document.getElementById("tbLuongCB").innerHTML =
-        "Lương cơ bản phải từ 1,000,000 đến 20,000,000";
-      isValid = false;
-      document.getElementById("tbLuongCB").style.display = "block";
-    } else {
-      document.getElementById("tbLuongCB").style.display = "none";
-    }
-  
-    if (!validateJobTitle(level)) {
-      document.getElementById("tbChucVu").innerHTML =
-        "Chọn chức vụ hợp lệ (Sếp, Trưởng phòng, Nhân viên)";
-      isValid = false;
-      document.getElementById("tbChucVu").style.display = "block";
-    } else {
-      document.getElementById("tbChucVu").style.display = "none";
-    }
-  
-    if (!validateHoursWorked(timework)) {
-      document.getElementById("tbGiolam").innerHTML =
-        "Số giờ làm trong tháng phải từ 80-200 giờ";
-      isValid = false;
-      document.getElementById("tbGiolam").style.display = "block";
-    } else {
-      document.getElementById("tbGiolam").style.display = "none";
-    }
-  
-    if (isValid) {
+if (!validateUsername(username)) {
+  document.getElementById("tbTKNV").innerHTML = "Tài khoản phải có 4-6 ký tự";
+  isValid = false;
+  document.getElementById("tbTKNV").style.display = "block";
+} else {
+  document.getElementById("tbTKNV").style.display = "none";
+}
+
+if (!validateFullName(fullname)) {
+  document.getElementById("tbTen").innerHTML = "Tên nhân viên phải là chữ";
+  isValid = false;
+  document.getElementById("tbTen").style.display = "block";
+} else {
+  document.getElementById("tbTen").style.display = "none";
+}
+
+if (!validateEmail(email)) {
+  document.getElementById("tbEmail").innerHTML = "Email không đúng định dạng";
+  isValid = false;
+  document.getElementById("tbEmail").style.display = "block";
+} else {
+  document.getElementById("tbEmail").style.display = "none";
+}
+
+if (!validatePassword(password)) {
+  document.getElementById("tbMatKhau").innerHTML =
+    "Mật khẩu phải từ 6-10 ký tự, bao gồm ít nhất 1 số, 1 chữ in hoa, và 1 ký tự đặc biệt";
+  isValid = false;
+  document.getElementById("tbMatKhau").style.display = "block";
+} else {
+  document.getElementById("tbMatKhau").style.display = "none";
+}
+
+if (!validateDate(days)) {
+  document.getElementById("tbNgay").innerHTML =
+    "Ngày làm không đúng định dạng (mm/dd/yyyy)";
+  isValid = false;
+  document.getElementById("tbNgay").style.display = "block";
+} else {
+  document.getElementById("tbNgay").style.display = "none";
+}
+
+if (!validateSalary(money)) {
+  document.getElementById("tbLuongCB").innerHTML =
+    "Lương cơ bản phải từ 1,000,000 đến 20,000,000";
+  isValid = false;
+  document.getElementById("tbLuongCB").style.display = "block";
+} else {
+  document.getElementById("tbLuongCB").style.display = "none";
+}
+
+if (!validateJobTitle(level)) {
+  document.getElementById("tbChucVu").innerHTML =
+    "Chọn chức vụ hợp lệ (Sếp, Trưởng phòng, Nhân viên)";
+  isValid = false;
+  document.getElementById("tbChucVu").style.display = "block";
+} else {
+  document.getElementById("tbChucVu").style.display = "none";
+}
+
+if (!validateHoursWorked(timework)) {
+  document.getElementById("tbGiolam").innerHTML =
+    "Số giờ làm trong tháng phải từ 80-200 giờ";
+  isValid = false;
+  document.getElementById("tbGiolam").style.display = "block";
+} else {
+  document.getElementById("tbGiolam").style.display = "none";
+}
+
+if (isValid) {
     if (location !== -1) {
       //  Tiến hành update
       listStaff[location].username = staff.username;
@@ -290,6 +283,8 @@ function btnCapNhat() {
     } else {
       Swal.fire("Không tìm thấy thông tin của nhân viên này.");
     }
+  } else {
+    Swal.fire (`Vui Lòng Đáp Ứng Đủ Các Điều Kiện`)
   }
 }
 function btnTimNV() {
